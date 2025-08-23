@@ -1,0 +1,294 @@
+{
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "level": "info",
+    "msg": "Mount device: proc",
+    "msg": "data: ",
+    "msg": "mounting tmpfs to rootfs at /dev",
+    "msg": "m.data: \"mode=0755,mode=755,size=65536k\", mountlabel: \"system_u:object_r:container_file_t:s0:c336,c762\"",
+    "msg": "mounting \"tmpfs\" at \"/proc/thread-self/fd/8\" (flags: 16777218, data: \"mode=0755,mode=755,size=65536k,context=\\\"system_u:object_r:container_file_t:s0:c336,c762\\\"\")",
+    "msg": "Mount device: devpts",
+    "msg": "data: newinstance,ptmxmode=0666,mode=0620,gid=5,context=\"system_u:object_r:container_file_t:s0:c336,c762\"",
+    "msg": "mounting mqueue to rootfs at /dev/mqueue",
+    "msg": "m.data: \"\", mountlabel: \"\"",
+    "msg": "mounting \"mqueue\" at \"/proc/thread-self/fd/8\" (flags: 14, data: \"\")",
+    "msg": "Mount device: sysfs",
+    "msg": "data: ",
+    "msg": "mounting cgroup to rootfs at /sys/fs/cgroup",
+    "msg": "mounting \"cgroup\" at \"/proc/thread-self/fd/8\" (flags: 2097167, data: \"\")",
+    "msg": "Mount device: bind",
+    "msg": "data: context=\"system_u:object_r:container_file_t:s0:c336,c762\"",
+    "msg": "mounting \"\" at \"/proc/thread-self/fd/8\" (flags: 278528, data: \"\")",
+    "msg": "mounting /var/lib/containerd/io.containerd.grpc.v1.cri/sandboxes/62df406da834ad817ad93aa24bce1c0ccb25cbeb83a5e8efe1ee6f9c466a816d/hosts to rootfs at /etc/hosts",
+    "msg": "m.data: \"\", mountlabel: \"system_u:object_r:container_file_t:s0:c336,c762\"",
+    "msg": "mounting \"/var/lib/containerd/io.containerd.grpc.v1.cri/sandboxes/62df406da834ad817ad93aa24bce1c0ccb25cbeb83a5e8efe1ee6f9c466a816d/hosts\" at \"/proc/thread-self/fd/8\" (flags: 20480, data: \"context=\\\"system_u:object_r:container_file_t:s0:c336,c762\\\"\")",
+    "msg": "mounting \"\" at \"/proc/thread-self/fd/8\" (flags: 20512, data: \"\")",
+    "msg": "Mount device: bind",
+    "msg": "data: context=\"system_u:object_r:container_file_t:s0:c336,c762\"",
+    "msg": "mounting \"\" at \"/proc/thread-self/fd/8\" (flags: 278528, data: \"\")",
+    "msg": "mounting /run/containerd/io.containerd.grpc.v1.cri/sandboxes/62df406da834ad817ad93aa24bce1c0ccb25cbeb83a5e8efe1ee6f9c466a816d/shm to rootfs at /dev/shm",
+    "msg": "m.data: \"\", mountlabel: \"system_u:object_r:container_file_t:s0:c336,c762\"",
+    "msg": "mounting \"/run/containerd/io.containerd.grpc.v1.cri/sandboxes/62df406da834ad817ad93aa24bce1c0ccb25cbeb83a5e8efe1ee6f9c466a816d/shm\" at \"/proc/thread-self/fd/8\" (flags: 20480, data: \"context=\\\"system_u:object_r:container_file_t:s0:c336,c762\\\"\")",
+    "msg": "mounting \"\" at \"/proc/thread-self/fd/8\" (flags: 20512, data: \"\")",
+    "msg": "mounting \"\" at \".\" (flags: 540672, data: \"\")",
+    "msg": "mounting \"\" at \"/proc/thread-self/fd/8\" (flags: 278528, data: \"\")",
+    "msg": "data: context=\"system_u:object_r:container_file_t:s0:c336,c762\"",
+    "msg": "Mount device: bind",
+    "msg": "mounting \"\" at \"/proc/thread-self/fd/8\" (flags: 20512, data: \"\")",
+    "msg": "mounting \"/var/lib/containerd/io.containerd.grpc.v1.cri/sandboxes/62df406da834ad817ad93aa24bce1c0ccb25cbeb83a5e8efe1ee6f9c466a816d/resolv.conf\" at \"/proc/thread-self/fd/8\" (flags: 20480, data: \"context=\\\"system_u:object_r:container_file_t:s0:c336,c762\\\"\")",
+    "msg": "m.data: \"\", mountlabel: \"system_u:object_r:container_file_t:s0:c336,c762\"",
+    "msg": "mounting /var/lib/containerd/io.containerd.grpc.v1.cri/sandboxes/62df406da834ad817ad93aa24bce1c0ccb25cbeb83a5e8efe1ee6f9c466a816d/resolv.conf to rootfs at /etc/resolv.conf",
+    "msg": "mounting \"\" at \"/proc/thread-self/fd/8\" (flags: 278528, data: \"\")",
+    "msg": "data: context=\"system_u:object_r:container_file_t:s0:c336,c762\"",
+    "msg": "Mount device: bind",
+    "msg": "mounting \"\" at \"/proc/thread-self/fd/8\" (flags: 20512, data: \"\")",
+    "msg": "mounting \"/var/lib/containerd/io.containerd.grpc.v1.cri/sandboxes/62df406da834ad817ad93aa24bce1c0ccb25cbeb83a5e8efe1ee6f9c466a816d/hostname\" at \"/proc/thread-self/fd/8\" (flags: 20480, data: \"context=\\\"system_u:object_r:container_file_t:s0:c336,c762\\\"\")",
+    "msg": "m.data: \"\", mountlabel: \"system_u:object_r:container_file_t:s0:c336,c762\"",
+    "msg": "mounting /var/lib/containerd/io.containerd.grpc.v1.cri/sandboxes/62df406da834ad817ad93aa24bce1c0ccb25cbeb83a5e8efe1ee6f9c466a816d/hostname to rootfs at /etc/hostname",
+    "msg": "Mount device: cgroup",
+    "msg": "mounting \"sysfs\" at \"/proc/thread-self/fd/8\" (flags: 15, data: \"\")",
+    "msg": "m.data: \"\", mountlabel: \"\"",
+    "msg": "mounting sysfs to rootfs at /sys",
+    "msg": "data: ",
+    "msg": "Mount device: mqueue",
+    "msg": "mounting \"devpts\" at \"/proc/thread-self/fd/8\" (flags: 10, data: \"newinstance,ptmxmode=0666,mode=0620,gid=5,context=\\\"system_u:object_r:container_file_t:s0:c336,c762\\\"\")",
+    "msg": "m.data: \"newinstance,ptmxmode=0666,mode=0620,gid=5\", mountlabel: \"system_u:object_r:container_file_t:s0:c336,c762\"",
+    "msg": "mounting devpts to rootfs at /dev/pts",
+    "msg": "data: mode=0755,mode=755,size=65536k,context=\"system_u:object_r:container_file_t:s0:c336,c762\"",
+    "msg": "Mount device: tmpfs",
+    "msg": "mounting \"proc\" at \"/proc/thread-self/fd/8\" (flags: 14, data: \"\")",
+    "msg": "m.data: \"\", mountlabel: \"\"",
+    "msg": "mounting proc to rootfs at /proc",
+    "msg": "mounting \"/run/containerd/io.containerd.runtime.v2.task/k8s.io/d413ce5e195345dbe5b3539af84789300d737bd6edf70d8f6909f63d3976061b/rootfs\" at \"/run/containerd/io.containerd.runtime.v2.task/k8s.io/d413ce5e195345dbe5b3539af84789300d737bd6edf70d8f6909f63d3976061b/rootfs\" (flags: 20480, data: \"\")",
+    "msg": "mounting \"\" at \"/\" (flags: 540672, data: \"\")",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z",
+    "time": "2025-08-22T23:17:55Z""time": "2025-08-22T23:17:55Z"
+}
+{
+    "level": "info",
+    "msg": "mounting \"\" at \"/proc/thread-self/fd/8\" (flags: 20512, data: \"\")",
+    "time": "2025-08-22T23:17:55Z"
+}
+{
+    "level": "info",
+    "msg": "mounting /var/lib/containerd/io.containerd.grpc.v1.cri/sandboxes/62df406da834ad817ad93aa24bce1c0ccb25cbeb83a5e8efe1ee6f9c466a816d/hosts to rootfs at /etc/hosts",
+    "time": "2025-08-22T23:17:55Z"
+}
+{
+    "level": "info",
+    "msg": "Mount device: bind",
+    "time": "2025-08-22T23:17:55Z"
+}
+{
+    "level": "info",
+    "msg": "m.data: \"\", mountlabel: \"system_u:object_r:container_file_t:s0:c336,c762\"",
+    "time": "2025-08-22T23:17:55Z"
+}
+{
+    "level": "info",
+    "msg": "data: context=\"system_u:object_r:container_file_t:s0:c336,c762\"",
+    "time": "2025-08-22T23:17:55Z"
+}
+{
+    "level": "info",
+    "msg": "mounting \"/var/lib/containerd/io.containerd.grpc.v1.cri/sandboxes/62df406da834ad817ad93aa24bce1c0ccb25cbeb83a5e8efe1ee6f9c466a816d/hosts\" at \"/proc/thread-self/fd/8\" (flags: 20480, data: \"context=\\\"system_u:object_r:container_file_t:s0:c336,c762\\\"\")",
+    "time": "2025-08-22T23:17:55Z"
+}
+{
+    "level": "info",
+    "msg": "mounting \"\" at \"/proc/thread-self/fd/8\" (flags: 278528, data: \"\")",
+    "time": "2025-08-22T23:17:55Z"
+}
+{
+    "level": "info",
+    "msg": "mounting \"\" at \"/proc/thread-self/fd/8\" (flags: 20512, data: \"\")",
+    "time": "2025-08-22T23:17:55Z"
+}
+{
+    "level": "info",
+    "msg": "mounting /var/lib/containerd/io.containerd.grpc.v1.cri/sandboxes/62df406da834ad817ad93aa24bce1c0ccb25cbeb83a5e8efe1ee6f9c466a816d/resolv.conf to rootfs at /etc/resolv.conf",
+    "time": "2025-08-22T23:17:55Z"
+}
+{
+    "level": "info",
+    "msg": "Mount device: bind",
+    "time": "2025-08-22T23:17:55Z"
+}
+{
+    "level": "info",
+    "msg": "m.data: \"\", mountlabel: \"system_u:object_r:container_file_t:s0:c336,c762\"",
+    "time": "2025-08-22T23:17:55Z"
+}
+{
+    "level": "info",
+    "msg": "data: context=\"system_u:object_r:container_file_t:s0:c336,c762\"",
+    "time": "2025-08-22T23:17:55Z"
+}
+{
+    "level": "info",
+    "msg": "mounting \"/var/lib/containerd/io.containerd.grpc.v1.cri/sandboxes/62df406da834ad817ad93aa24bce1c0ccb25cbeb83a5e8efe1ee6f9c466a816d/resolv.conf\" at \"/proc/thread-self/fd/8\" (flags: 20480, data: \"context=\\\"system_u:object_r:container_file_t:s0:c336,c762\\\"\")",
+    "time": "2025-08-22T23:17:55Z"
+}
+{
+    "level": "info",
+    "msg": "mounting \"\" at \"/proc/thread-self/fd/8\" (flags: 278528, data: \"\")",
+    "time": "2025-08-22T23:17:55Z"
+}
+{
+    "level": "info",
+    "msg": "mounting \"\" at \"/proc/thread-self/fd/8\" (flags: 20512, data: \"\")",
+    "time": "2025-08-22T23:17:55Z"
+}
+{
+    "level": "info",
+    "msg": "mounting /run/containerd/io.containerd.grpc.v1.cri/sandboxes/62df406da834ad817ad93aa24bce1c0ccb25cbeb83a5e8efe1ee6f9c466a816d/shm to rootfs at /dev/shm",
+    "time": "2025-08-22T23:17:55Z"
+}
+{
+    "level": "info",
+    "msg": "Mount device: bind",
+    "time": "2025-08-22T23:17:55Z"
+}
+{
+    "level": "info",
+    "msg": "m.data: \"\", mountlabel: \"system_u:object_r:container_file_t:s0:c336,c762\"",
+    "time": "2025-08-22T23:17:55Z"
+}
+{
+    "level": "info",
+    "msg": "data: context=\"system_u:object_r:container_file_t:s0:c336,c762\"",
+    "time": "2025-08-22T23:17:55Z"
+}
+{
+    "level": "info",
+    "msg": "mounting \"/run/containerd/io.containerd.grpc.v1.cri/sandboxes/62df406da834ad817ad93aa24bce1c0ccb25cbeb83a5e8efe1ee6f9c466a816d/shm\" at \"/proc/thread-self/fd/8\" (flags: 20480, data: \"context=\\\"system_u:object_r:container_file_t:s0:c336,c762\\\"\")",
+    "time": "2025-08-22T23:17:55Z"
+}
+{
+    "level": "info",
+    "msg": "mounting \"\" at \"/proc/thread-self/fd/8\" (flags: 278528, data: \"\")",
+    "time": "2025-08-22T23:17:55Z"
+}
+{
+    "level": "info",
+    "msg": "mounting \"\" at \"/proc/thread-self/fd/8\" (flags: 20512, data: \"\")",
+    "time": "2025-08-22T23:17:55Z"
+}
+{
+    "level": "info",
+    "msg": "mounting \"\" at \".\" (flags: 540672, data: \"\")",
+    "time": "2025-08-22T23:17:55Z"
+}

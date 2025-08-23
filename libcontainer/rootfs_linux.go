@@ -565,6 +565,8 @@ func createMountpoint(rootfs string, m mountEntry) (string, error) {
 
 func mountToRootfs(c *mountConfig, m mountEntry) error {
 	rootfs := c.root
+	logrus.Infof("mounting %s to rootfs at %s", m.srcName(), m.Destination)
+	logrus.Infof("Mount device: %s", m.Device)
 
 	// procfs and sysfs are special because we need to ensure they are actually
 	// mounted on a specific path in a container without any funny business.
@@ -1279,6 +1281,8 @@ func mountPropagate(m mountEntry, rootfs string, mountLabel string) error {
 		data  = label.FormatMountLabel(m.Data, mountLabel)
 		flags = m.Flags
 	)
+	logrus.Infof("m.data: %q, mountlabel: %q", m.Data, mountLabel)
+	logrus.Infof("data: %s", data)
 	// Delay mounting the filesystem read-only if we need to do further
 	// operations on it. We need to set up files in "/dev", and other tmpfs
 	// mounts may need to be chmod-ed after mounting. These mounts will be
