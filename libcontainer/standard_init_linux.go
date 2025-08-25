@@ -47,8 +47,11 @@ func (l *linuxStandardInit) getSessionRingParams() (string, uint32, uint32) {
 }
 
 func (l *linuxStandardInit) Init() error {
+	logrus.Infof("init: starting (pid=%d, process_label=%q, mount_label=%q)", unix.Getpid(), l.config.ProcessLabel, l.config.Config.MountLabel)
+
 	if !l.config.Config.NoNewKeyring {
 		if l.config.ProcessLabel != "" {
+			logrus.Infof("init: setting keyring selinux label: %q", l.config.ProcessLabel)
 			if err := selinux.SetKeyLabel(l.config.ProcessLabel); err != nil {
 				return err
 			}
@@ -85,8 +88,10 @@ func (l *linuxStandardInit) Init() error {
 	}
 
 	// initialises the labeling system
+	logrus.Infof("init: initializing selinux")
 	selinux.GetEnabled()
 
+	logrus.Infof("init: preparing rootfs")
 	err := prepareRootfs(l.pipe, l.config)
 	if err != nil {
 		return err
@@ -146,6 +151,8 @@ func (l *linuxStandardInit) Init() error {
 			return fmt.Errorf("can't mask path %s: %w", path, err)
 		}
 	}
+
+	logrus.Infof("init: masked paths complete, mount_label=%q", l.config.Config.MountLabel)
 	pdeath, err := system.GetParentDeathSignal()
 	if err != nil {
 		return fmt.Errorf("can't get pdeath signal: %w", err)
@@ -170,6 +177,8 @@ func (l *linuxStandardInit) Init() error {
 	if err := syncParentReady(l.pipe); err != nil {
 		return fmt.Errorf("sync ready: %w", err)
 	}
+
+	logrus.Infof("init: setting selinux exec label: %q", l.config.ProcessLabel)
 	if l.config.ProcessLabel != "" {
 		if err := selinux.SetExecLabel(l.config.ProcessLabel); err != nil {
 			return fmt.Errorf("can't set process label: %w", err)
@@ -189,6 +198,7 @@ func (l *linuxStandardInit) Init() error {
 			return err
 		}
 	}
+	logrus.Infof("init: finalizing namespace")
 	if err := finalizeNamespace(l.config); err != nil {
 		return err
 	}
@@ -217,10 +227,12 @@ func (l *linuxStandardInit) Init() error {
 	}
 	// Check for the arg before waiting to make sure it exists and it is
 	// returned as a create time error.
+	logrus.Infof("init: looking up executable: %s", l.config.Args[0])
 	name, err := exec.LookPath(l.config.Args[0])
 	if err != nil {
 		return err
 	}
+	logrus.Infof("init: resolved executable: %s -> %s", l.config.Args[0], name)
 
 	// Set seccomp as close to execve as possible, so as few syscalls take
 	// place afterward (reducing the amount of syscalls that users need to
@@ -246,11 +258,11 @@ func (l *linuxStandardInit) Init() error {
 	}
 
 	// Close the pipe to signal that we have completed our init.
-	logrus.Debugf("init: closing the pipe to signal completion")
+	logrus.Infof("init: closing the pipe to signal completion")
 	_ = l.pipe.Close()
 
 	// Close the log pipe fd so the parent's ForwardLogs can exit.
-	logrus.Debugf("init: about to wait on exec fifo")
+	logrus.Infof("init: about to wait on exec fifo")
 	if err := l.logPipe.Close(); err != nil {
 		return fmt.Errorf("close log pipe: %w", err)
 	}
@@ -299,5 +311,7 @@ func (l *linuxStandardInit) Init() error {
 	if err := utils.UnsafeCloseFrom(l.config.PassedFilesCount + 3); err != nil {
 		return err
 	}
+
+	logrus.Infof("init: about to exec %s with selinux label: %q", name, l.config.ProcessLabel)
 	return linux.Exec(name, l.config.Args, l.config.Env)
 }

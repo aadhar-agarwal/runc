@@ -1,0 +1,70 @@
+{"level":"info","msg":"init: starting (pid=7, process_label=\"system_u:system_r:container_t:s0:c102,c787\", mount_label=\"system_u:object_r:container_file_t:s0:c102,c787\")","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"init: setting keyring selinux label: \"system_u:system_r:container_t:s0:c102,c787\"","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"init: initializing selinux","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"init: preparing rootfs","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting \"\" at \"/\" (flags: 540672, data: \"\")","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting \"/run/containerd/io.containerd.runtime.v2.task/k8s.io/b002e1ed990a3d6b64bd9d336a7e61afd0f39592587455ae854b01316d63754c/rootfs\" at \"/run/containerd/io.containerd.runtime.v2.task/k8s.io/b002e1ed990a3d6b64bd9d336a7e61afd0f39592587455ae854b01316d63754c/rootfs\" (flags: 20480, data: \"\")","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting proc to rootfs at /proc","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"Mount device: proc","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"m.data: \"\", mountlabel: \"\"","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"data: ","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting \"proc\" at \"/proc/thread-self/fd/8\" (flags: 14, data: \"\")","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting tmpfs to rootfs at /dev","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"Mount device: tmpfs","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"m.data: \"mode=0755,mode=755,size=65536k\", mountlabel: \"system_u:object_r:container_file_t:s0:c102,c787\"","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"data: mode=0755,mode=755,size=65536k,context=\"system_u:object_r:container_file_t:s0:c102,c787\"","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting \"tmpfs\" at \"/proc/thread-self/fd/8\" (flags: 16777218, data: \"mode=0755,mode=755,size=65536k,context=\\\"system_u:object_r:container_file_t:s0:c102,c787\\\"\")","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting devpts to rootfs at /dev/pts","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"Mount device: devpts","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"m.data: \"newinstance,ptmxmode=0666,mode=0620,gid=5\", mountlabel: \"system_u:object_r:container_file_t:s0:c102,c787\"","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"data: newinstance,ptmxmode=0666,mode=0620,gid=5,context=\"system_u:object_r:container_file_t:s0:c102,c787\"","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting \"devpts\" at \"/proc/thread-self/fd/8\" (flags: 10, data: \"newinstance,ptmxmode=0666,mode=0620,gid=5,context=\\\"system_u:object_r:container_file_t:s0:c102,c787\\\"\")","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting mqueue to rootfs at /dev/mqueue","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"Mount device: mqueue","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"m.data: \"\", mountlabel: \"\"","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"data: ","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting \"mqueue\" at \"/proc/thread-self/fd/8\" (flags: 14, data: \"\")","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting sysfs to rootfs at /sys","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"Mount device: sysfs","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"m.data: \"\", mountlabel: \"\"","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"data: ","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting \"sysfs\" at \"/proc/thread-self/fd/8\" (flags: 15, data: \"\")","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting cgroup to rootfs at /sys/fs/cgroup","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"Mount device: cgroup","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting \"cgroup\" at \"/proc/thread-self/fd/8\" (flags: 2097167, data: \"\")","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting /var/lib/containerd/io.containerd.grpc.v1.cri/sandboxes/036cfe8981a9cb174daf01624beba31bbcff071cd80f21b6ec8568818d9c376e/hostname to rootfs at /etc/hostname","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"Mount device: bind","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"m.data: \"\", mountlabel: \"system_u:object_r:container_file_t:s0:c102,c787\"","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"data: context=\"system_u:object_r:container_file_t:s0:c102,c787\"","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting \"/var/lib/containerd/io.containerd.grpc.v1.cri/sandboxes/036cfe8981a9cb174daf01624beba31bbcff071cd80f21b6ec8568818d9c376e/hostname\" at \"/proc/thread-self/fd/8\" (flags: 20480, data: \"context=\\\"system_u:object_r:container_file_t:s0:c102,c787\\\"\")","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting \"\" at \"/proc/thread-self/fd/8\" (flags: 278528, data: \"\")","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting \"\" at \"/proc/thread-self/fd/8\" (flags: 20512, data: \"\")","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting /var/lib/containerd/io.containerd.grpc.v1.cri/sandboxes/036cfe8981a9cb174daf01624beba31bbcff071cd80f21b6ec8568818d9c376e/hosts to rootfs at /etc/hosts","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"Mount device: bind","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"m.data: \"\", mountlabel: \"system_u:object_r:container_file_t:s0:c102,c787\"","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"data: context=\"system_u:object_r:container_file_t:s0:c102,c787\"","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting \"/var/lib/containerd/io.containerd.grpc.v1.cri/sandboxes/036cfe8981a9cb174daf01624beba31bbcff071cd80f21b6ec8568818d9c376e/hosts\" at \"/proc/thread-self/fd/8\" (flags: 20480, data: \"context=\\\"system_u:object_r:container_file_t:s0:c102,c787\\\"\")","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting \"\" at \"/proc/thread-self/fd/8\" (flags: 278528, data: \"\")","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting \"\" at \"/proc/thread-self/fd/8\" (flags: 20512, data: \"\")","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting /var/lib/containerd/io.containerd.grpc.v1.cri/sandboxes/036cfe8981a9cb174daf01624beba31bbcff071cd80f21b6ec8568818d9c376e/resolv.conf to rootfs at /etc/resolv.conf","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"Mount device: bind","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"m.data: \"\", mountlabel: \"system_u:object_r:container_file_t:s0:c102,c787\"","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"data: context=\"system_u:object_r:container_file_t:s0:c102,c787\"","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting \"/var/lib/containerd/io.containerd.grpc.v1.cri/sandboxes/036cfe8981a9cb174daf01624beba31bbcff071cd80f21b6ec8568818d9c376e/resolv.conf\" at \"/proc/thread-self/fd/8\" (flags: 20480, data: \"context=\\\"system_u:object_r:container_file_t:s0:c102,c787\\\"\")","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting \"\" at \"/proc/thread-self/fd/8\" (flags: 278528, data: \"\")","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting \"\" at \"/proc/thread-self/fd/8\" (flags: 20512, data: \"\")","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting /run/containerd/io.containerd.grpc.v1.cri/sandboxes/036cfe8981a9cb174daf01624beba31bbcff071cd80f21b6ec8568818d9c376e/shm to rootfs at /dev/shm","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"Mount device: bind","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"m.data: \"\", mountlabel: \"system_u:object_r:container_file_t:s0:c102,c787\"","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"data: context=\"system_u:object_r:container_file_t:s0:c102,c787\"","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting \"/run/containerd/io.containerd.grpc.v1.cri/sandboxes/036cfe8981a9cb174daf01624beba31bbcff071cd80f21b6ec8568818d9c376e/shm\" at \"/proc/thread-self/fd/8\" (flags: 20480, data: \"context=\\\"system_u:object_r:container_file_t:s0:c102,c787\\\"\")","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting \"\" at \"/proc/thread-self/fd/8\" (flags: 278528, data: \"\")","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting \"\" at \"/proc/thread-self/fd/8\" (flags: 20512, data: \"\")","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"mounting \"\" at \".\" (flags: 540672, data: \"\")","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"init: masked paths complete, mount_label=\"system_u:object_r:container_file_t:s0:c102,c787\"","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"init: setting selinux exec label: \"system_u:system_r:container_t:s0:c102,c787\"","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"init: finalizing namespace","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"init: looking up executable: sleep","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"init: resolved executable: sleep -\u003e /bin/sleep","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"init: closing the pipe to signal completion","time":"2025-08-25T20:22:29Z"}
+{"level":"info","msg":"init: about to wait on exec fifo","time":"2025-08-25T20:22:29Z"}
