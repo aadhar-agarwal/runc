@@ -263,9 +263,12 @@ func (l *linuxStandardInit) Init() error {
 
 	// Close the log pipe fd so the parent's ForwardLogs can exit.
 	logrus.Infof("init: about to wait on exec fifo")
+	logrus.Infof("init: about to close log pipe fd=%d", l.logPipe.Fd())
 	if err := l.logPipe.Close(); err != nil {
+		logrus.Infof("init: log pipe close failed: %v", err)
 		return fmt.Errorf("close log pipe: %w", err)
 	}
+	logrus.Infof("init: log pipe closed successfully")
 
 	fifoPath, closer := utils.ProcThreadSelfFd(l.fifoFile.Fd())
 	defer closer()
@@ -274,13 +277,16 @@ func (l *linuxStandardInit) Init() error {
 	// user process. We open it through /proc/self/fd/$fd, because the fd that
 	// was given to us was an O_PATH fd to the fifo itself. Linux allows us to
 	// re-open an O_PATH fd through /proc.
+	logrus.Infof("init: opening exec fifo: %s", fifoPath)
 	fd, err := linux.Open(fifoPath, unix.O_WRONLY|unix.O_CLOEXEC, 0)
 	if err != nil {
 		return err
 	}
+	logrus.Infof("init: writing to exec fifo")
 	if _, err := unix.Write(fd, []byte("0")); err != nil {
 		return &os.PathError{Op: "write exec fifo", Path: fifoPath, Err: err}
 	}
+	logrus.Infof("init: exec fifo write completed")
 
 	// Close the O_PATH fifofd fd before exec because the kernel resets
 	// dumpable in the wrong order. This has been fixed in newer kernels, but
@@ -288,14 +294,17 @@ func (l *linuxStandardInit) Init() error {
 	// N.B. the core issue itself (passing dirfds to the host filesystem) has
 	// since been resolved.
 	// https://github.com/torvalds/linux/blob/v4.9/fs/exec.c#L1290-L1318
+	logrus.Infof("init: closing fifo file")
 	_ = l.fifoFile.Close()
 
 	if s := l.config.SpecState; s != nil {
+		logrus.Infof("init: running StartContainer hooks")
 		s.Pid = unix.Getpid()
 		s.Status = specs.StateCreated
 		if err := l.config.Config.Hooks.Run(configs.StartContainer, s); err != nil {
 			return err
 		}
+		logrus.Infof("init: StartContainer hooks completed")
 	}
 
 	// Close all file descriptors we are not passing to the container. This is
@@ -308,6 +317,7 @@ func (l *linuxStandardInit) Init() error {
 	// (otherwise the (*os.File) finaliser could close the wrong file). See
 	// CVE-2024-21626 for more information as to why this protection is
 	// necessary.
+	logrus.Infof("init: closing file descriptors")
 	if err := utils.UnsafeCloseFrom(l.config.PassedFilesCount + 3); err != nil {
 		return err
 	}
