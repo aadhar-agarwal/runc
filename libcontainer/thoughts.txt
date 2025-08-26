@@ -2,6 +2,7 @@
 
 overlay on /run/containerd/.../rootfs type overlay (rw,relatime,context="system_u:object_r:container_file_t:s0:c179,c246",...)
 
+
 2. Runc receives the path to this already-mounted overlay filesystem as config.Rootfs:
 
 config.Rootfs = "/run/containerd/io.containerd.runtime.v2.task/k8s.io/.../rootfs"
@@ -11,5 +12,42 @@ config.Rootfs = "/run/containerd/io.containerd.runtime.v2.task/k8s.io/.../rootfs
 
 mount(config.Rootfs, config.Rootfs, "bind", unix.MS_BIND|unix.MS_REC, "")
 
+
 4. The bind mount preserves the SELinux context from the original overlay mount.
 
+-----------------------------------------------------------------------
+prepareRootfs() for individual filesystem mounts like proc, dev, sys
+    ↓ (calls)
+mountToRootfs() 
+    ↓ (calls)
+mountPropagate() 
+    ↓ (formats mount data with label.FormatMountLabel)
+    data = "context=\"system_u:object_r:container_file_t:s0:c334,c378\""
+    ↓ (calls)
+mountViaFds() 
+    ↓ (calls)
+unix.Mount(src, dst, fstype, flags, data) 
+    ↓ (system call)
+Linux kernel mount(2) syscall
+    ↓ (processes mount options)
+SELinux filesystem labeling applied
+
+----------------------------------------------------------------------------
+For root overlay filesystem:
+containerd (before runc)
+    ↓
+Creates overlay mount with SELinux context
+    ↓
+overlay mount with context="system_u:object_r:container_file_t:s0:c179,c246"
+    ↓
+prepareRootfs()
+    ↓ (calls)
+prepareRoot()
+    ↓ (calls)
+mount(config.Rootfs, config.Rootfs, "bind", unix.MS_BIND|unix.MS_REC, "")
+    ↓ (NO SELinux context data - just empty "")
+Bind mount preserves existing SELinux context from overlay
+
+Containerd creates the overlay with SELinux context
+Runc just does a simple bind mount to make it available in the right location
+The bind mount inherits the SELinux context from the original overlay (verify this)
