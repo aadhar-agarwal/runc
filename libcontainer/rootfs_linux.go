@@ -98,6 +98,7 @@ func needsSetupDev(config *configs.Config) bool {
 // inside a new mount namespace. It doesn't set anything as ro. You must call
 // finalizeRootfs after this function to finish setting up the rootfs.
 func prepareRootfs(pipe *syncSocket, iConfig *initConfig) (err error) {
+	logrus.Infof("Top of prepareRootfs")
 	config := iConfig.Config
 	if err := prepareRoot(config); err != nil {
 		return fmt.Errorf("error preparing rootfs: %w", err)
@@ -565,8 +566,8 @@ func createMountpoint(rootfs string, m mountEntry) (string, error) {
 
 func mountToRootfs(c *mountConfig, m mountEntry) error {
 	rootfs := c.root
-	logrus.Infof("mounting %s to rootfs at %s", m.srcName(), m.Destination)
-	logrus.Infof("Mount device: %s", m.Device)
+	logrus.Infof("mountToRootfs: mounting %s to rootfs at %s", m.srcName(), m.Destination)
+	logrus.Infof("mountToRootfs: Mount device: %s", m.Device)
 
 	// procfs and sysfs are special because we need to ensure they are actually
 	// mounted on a specific path in a container without any funny business.
@@ -1031,6 +1032,7 @@ func rootfsParentMountPrivate(path string) error {
 }
 
 func prepareRoot(config *configs.Config) error {
+	logrus.Infof("top of prepareRoot")
 	flag := unix.MS_SLAVE | unix.MS_REC
 	if config.RootPropagation != 0 {
 		flag = config.RootPropagation
@@ -1281,8 +1283,8 @@ func mountPropagate(m mountEntry, rootfs string, mountLabel string) error {
 		data  = label.FormatMountLabel(m.Data, mountLabel)
 		flags = m.Flags
 	)
-	logrus.Infof("m.data: %q, mountlabel: %q", m.Data, mountLabel)
-	logrus.Infof("data: %s", data)
+	logrus.Infof("mountPropagate: m.data: %q, mountlabel: %q", m.Data, mountLabel)
+	logrus.Infof("mountPropagate: data: %s", data)
 	// Delay mounting the filesystem read-only if we need to do further
 	// operations on it. We need to set up files in "/dev", and other tmpfs
 	// mounts may need to be chmod-ed after mounting. These mounts will be

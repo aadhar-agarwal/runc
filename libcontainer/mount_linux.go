@@ -191,7 +191,7 @@ func mountViaFds(source string, srcFile *mountSource, target, dstFd, fstype stri
 			unix.MOVE_MOUNT_F_EMPTY_PATH|unix.MOVE_MOUNT_T_SYMLINKS)
 	} else {
 		op = "mount"
-		logrus.Infof("mounting %q at %q (flags: %d, data: %q)", src, dst, flags, data)
+		logrus.Infof("In mountViaFds: mounting %q at %q (flags: %d, data: %q)", src, dst, flags, data)
 		err = unix.Mount(src, dst, fstype, flags, data)
 	}
 	if err != nil {

@@ -1,0 +1,15 @@
+1. Containerd creates the overlay mount with proper SELinux context:
+
+overlay on /run/containerd/.../rootfs type overlay (rw,relatime,context="system_u:object_r:container_file_t:s0:c179,c246",...)
+
+2. Runc receives the path to this already-mounted overlay filesystem as config.Rootfs:
+
+config.Rootfs = "/run/containerd/io.containerd.runtime.v2.task/k8s.io/.../rootfs"
+
+
+3. Runc's prepareRoot() function does a bind mount of this overlay:
+
+mount(config.Rootfs, config.Rootfs, "bind", unix.MS_BIND|unix.MS_REC, "")
+
+4. The bind mount preserves the SELinux context from the original overlay mount.
+
