@@ -51,3 +51,17 @@ Bind mount preserves existing SELinux context from overlay
 Containerd creates the overlay with SELinux context
 Runc just does a simple bind mount to make it available in the right location
 The bind mount inherits the SELinux context from the original overlay (verify this)
+
+---------------------------------
+
+root [ /run/containerd/io.containerd.runtime.v2.task/k8s.io/73627e824c469c63ce20a5d68867524656c46d739b618a599f5064e3a046e550 ]# ls -Z /run/containerd/io.containerd.runtime.v2.task/k8s.io/73627e824c469c63ce20a5d68867524656c46d739b618a599f5064e3a046e550/rootfs/lib/x86_64-linux-gnu/libc-2.27.so
+system_u:object_r:container_file_t:s0:c765,c799 /run/containerd/io.containerd.runtime.v2.task/k8s.io/73627e824c469c63ce20a5d68867524656c46d739b618a599f5064e3a046e550/rootfs/lib/x86_64-linux-gnu/libc-2.27.so
+
+root [ /run/containerd/io.containerd.runtime.v2.task/k8s.io/73627e824c469c63ce20a5d68867524656c46d739b618a599f5064e3a046e550 ]# ls -Z /var/lib/containerd/io.containerd.snapshotter.v1.erofs/snapshots/1/fs/lib/x86_64-linux-gnu/libc-2.27.so
+system_u:object_r:unlabeled_t:s0 /var/lib/containerd/io.containerd.snapshotter.v1.erofs/snapshots/1/fs/lib/x86_64-linux-gnu/libc-2.27.so
+
+---------------------------------
+
+Container rootfs: /run/containerd/.../rootfs/lib/x86_64-linux-gnu/libc-2.27.so → container_file_t 
+Erofs snapshot: /var/lib/containerd/.../snapshots/1/fs/lib/x86_64-linux-gnu/libc-2.27.so → unlabeled_t 
+SELinux checks the underlying erofs file, not the overlay mount

@@ -261,6 +261,14 @@ func (l *linuxStandardInit) Init() error {
 	logrus.Infof("init: closing the pipe to signal completion")
 	_ = l.pipe.Close()
 
+	// Check SELinux label of libc before closing log pipe to debug AVC denial
+	libcPath := "/lib/x86_64-linux-gnu/libc-2.27.so"
+	if libcLabel, err := selinux.FileLabel(libcPath); err != nil {
+		logrus.Infof("init: failed to get selinux label for %s: %v", libcPath, err)
+	} else {
+		logrus.Infof("init: selinux label for %s: %q", libcPath, libcLabel)
+	}
+
 	// Close the log pipe fd so the parent's ForwardLogs can exit.
 	logrus.Infof("init: about to wait on exec fifo")
 	logrus.Infof("init: about to close log pipe fd=%d", l.logPipe.Fd())
