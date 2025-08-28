@@ -272,6 +272,9 @@ func (l *linuxStandardInit) Init() error {
 	// Close the log pipe fd so the parent's ForwardLogs can exit.
 	logrus.Infof("init: about to wait on exec fifo")
 	logrus.Infof("init: about to close log pipe fd=%d", l.logPipe.Fd())
+
+	// logrus.Infof("Pausing runc for 2 min before exec")
+
 	if err := l.logPipe.Close(); err != nil {
 		logrus.Infof("init: log pipe close failed: %v", err)
 		return fmt.Errorf("close log pipe: %w", err)
@@ -329,6 +332,8 @@ func (l *linuxStandardInit) Init() error {
 	if err := utils.UnsafeCloseFrom(l.config.PassedFilesCount + 3); err != nil {
 		return err
 	}
+
+	// time.Sleep(120 * time.Second)
 
 	logrus.Infof("init: about to exec %s with selinux label: %q", name, l.config.ProcessLabel)
 	return linux.Exec(name, l.config.Args, l.config.Env)
